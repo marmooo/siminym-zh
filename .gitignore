@@ -1,0 +1,6 @@
+.direnv/
+.envrc
+cc.zh.300.vec
+cc.zh.300-small.vec
+cc.zh.300-small.magnitude
+jieba

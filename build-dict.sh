@@ -1,3 +1,4 @@
+deno run --allow-read --allow-write reduce.js
 python reduce.py
 python -m pymagnitude.converter \
   -i cc.zh.300-small.vec \

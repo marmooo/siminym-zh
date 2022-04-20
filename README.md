@@ -21,8 +21,8 @@ bash build.sh
 
 ## Related projects
 
-- [siminym-en](https://github.com/marmooo/wncc-en) (English)
-- [siminym-ja](https://github.com/marmooo/wncc-ja) (Japanese)
+- [Siminym-en](https://github.com/marmooo/wncc-en) (English)
+- [Siminym-ja](https://github.com/marmooo/wncc-ja) (Japanese)
 
 ## License
 

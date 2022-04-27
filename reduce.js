@@ -22,4 +22,4 @@ async function loadDict(threshold) {
 const threshold = 99;
 const dict = await loadDict(threshold);
 const output = dict.map(x => x.join(",")).join("\n");
-Deno.writeTextFileSync("words.lst", output);
+Deno.writeTextFileSync("all.lst", output);

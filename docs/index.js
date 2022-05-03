@@ -42,5 +42,5 @@ async function searchSiminyms(lemma,n){const loading=document.getElementById("lo
 if(row[0]){const words=JSON.parse(row[0].words);for(const word of words){const[lemma,_similarity]=word;const button=document.createElement("button");button.className="btn btn-outline-secondary m-1";button.textContent=lemma;button.onclick=()=>{copyToClipboard(button.textContent);};obj.appendChild(button);}}
 loading.classList.add("d-none");}
 async function loadDBWorker(n){const config={from:"jsonconfig",configUrl:`/siminym-zh/db/${n}/config.json`};dbWorkers[n]=await createDbWorker([config],"/siminym-zh/sql.js-httpvfs/sqlite.worker.js","/siminym-zh/sql.js-httpvfs/sql-wasm.wasm");}
-function loadDBWorkers(){loadDBWorker(1000);loadDBWorker(5000);loadDBWorker(10000);loadDBWorker(50000);}
-const dbWorkers={};loadConfig();loadDBWorkers();document.addEventListener("keydown",function(event){if(event.key=="Enter")search();},false);document.getElementById("toggleDarkMode").onclick=toggleDarkMode;document.getElementById("lang").onchange=changeLang;document.getElementById("search").onclick=search;
+function loadDBWorkers(){const promises=[loadDBWorker(1000),loadDBWorker(5000),loadDBWorker(10000),loadDBWorker(50000),];return Promise.all(promises);}
+const dbWorkers={};loadConfig();await loadDBWorkers();document.addEventListener("keydown",function(event){if(event.key=="Enter")search();},false);document.getElementById("toggleDarkMode").onclick=toggleDarkMode;document.getElementById("lang").onchange=changeLang;document.getElementById("search").onclick=search;

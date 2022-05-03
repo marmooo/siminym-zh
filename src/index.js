@@ -114,15 +114,18 @@ async function loadDBWorker(n) {
 }
 
 function loadDBWorkers() {
-  loadDBWorker(1000);
-  loadDBWorker(5000);
-  loadDBWorker(10000);
-  loadDBWorker(50000);
+  const promises = [
+    loadDBWorker(1000),
+    loadDBWorker(5000),
+    loadDBWorker(10000),
+    loadDBWorker(50000),
+  ];
+  return Promise.all(promises);
 }
 
 const dbWorkers = {};
 loadConfig();
-loadDBWorkers();
+await loadDBWorkers();
 
 document.addEventListener("keydown", function (event) {
   if (event.key == "Enter") search();

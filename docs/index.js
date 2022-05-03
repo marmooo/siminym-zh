@@ -43,4 +43,4 @@ if(row[0]){const words=JSON.parse(row[0].words);for(const word of words){const[l
 loading.classList.add("d-none");}
 async function loadDBWorker(n){const config={from:"jsonconfig",configUrl:`/siminym-zh/db/${n}/config.json`};dbWorkers[n]=await createDbWorker([config],"/siminym-zh/sql.js-httpvfs/sqlite.worker.js","/siminym-zh/sql.js-httpvfs/sql-wasm.wasm");}
 function loadDBWorkers(){const promises=[loadDBWorker(1000),loadDBWorker(5000),loadDBWorker(10000),loadDBWorker(50000),];return Promise.all(promises);}
-const dbWorkers={};loadConfig();await loadDBWorkers();document.addEventListener("keydown",function(event){if(event.key=="Enter")search();},false);document.getElementById("toggleDarkMode").onclick=toggleDarkMode;document.getElementById("lang").onchange=changeLang;document.getElementById("search").onclick=search;
+const dbWorkers={};loadConfig();loadDBWorkers();document.addEventListener("keydown",function(event){if(event.key=="Enter")search();},false);document.getElementById("toggleDarkMode").onclick=toggleDarkMode;document.getElementById("lang").onchange=changeLang;document.getElementById("search").onclick=search;

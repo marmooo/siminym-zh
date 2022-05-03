@@ -125,7 +125,7 @@ function loadDBWorkers() {
 
 const dbWorkers = {};
 loadConfig();
-await loadDBWorkers();
+loadDBWorkers();
 
 document.addEventListener("keydown", function (event) {
   if (event.key == "Enter") search();

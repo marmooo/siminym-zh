@@ -1,6 +1,6 @@
-# Siminym-ja
+# Siminym-zh
 
-[一本具有高度相似性的基本词汇的词典](https://marmooo.github.io/siminym-ja/)。
+[一本具有高度相似性的基本词汇的词典](https://marmooo.github.io/siminym-zh/)。
 
 ## Installation
 

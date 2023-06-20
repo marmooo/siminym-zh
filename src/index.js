@@ -25,9 +25,9 @@ function changeLang() {
 
 function search() {
   const word = document.getElementById("searchText").value;
-  searchSiminyms(word, 1000);
+  searchSiminyms(word, 2000);
   searchSiminyms(word, 5000);
-  searchSiminyms(word, 10000);
+  searchSiminyms(word, 20000);
   searchSiminyms(word, 50000);
 }
 
@@ -75,23 +75,19 @@ async function loadDBWorker(n) {
   );
 }
 
-function loadDBWorkers() {
-  const promises = [
-    loadDBWorker(1000),
-    loadDBWorker(5000),
-    loadDBWorker(10000),
-    loadDBWorker(50000),
-  ];
-  return Promise.all(promises);
+async function loadDBWorkers() {
+  const sizes = [2000, 5000, 20000, 50000];
+  const promises = sizes.map(loadDBWorker);
+  await Promise.all(promises);
 }
 
 const dbWorkers = {};
 loadConfig();
 loadDBWorkers();
 
-document.addEventListener("keydown", function (event) {
+document.addEventListener("keydown", (event) => {
   if (event.key == "Enter") search();
-}, false);
+});
 document.getElementById("toggleDarkMode").onclick = toggleDarkMode;
 document.getElementById("lang").onchange = changeLang;
 document.getElementById("search").onclick = search;

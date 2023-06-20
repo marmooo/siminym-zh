@@ -2,6 +2,11 @@
 
 [一本具有高度相似性的基本词汇的词典](https://marmooo.github.io/siminym-zh/)。
 
+## Requirements
+
+- [rye](https://github.com/mitsuhiko/rye)
+- `sudo apt install clang` for [spotify/annoy](https://github.com/spotify/annoy)
+
 ## Installation
 
 - install [fxsjy/jieba](https://github.com/fxsjy/jieba) licensed under the MIT
@@ -10,12 +15,12 @@
   from [fastText](https://fasttext.cc/docs/en/crawl-vectors.html) licensed under
   the [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
 - `npm install`
+- `rye sync`
 
 ## Build
 
 ```
-bash build-dict.sh
-bash build-db.sh
+deno run -A build-all-db.js
 bash build.sh
 ```
 

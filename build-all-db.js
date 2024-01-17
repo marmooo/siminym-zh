@@ -1,4 +1,4 @@
-import $ from "https://deno.land/x/dax/mod.ts";
+import { $ } from "deno_dx";
 
 const sizes = [2000, 5000, 20000, 1000000];
 for (const size of sizes) {

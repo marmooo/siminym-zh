@@ -1,4 +1,4 @@
-import { $ } from "deno_dx";
+import { $ } from "zx";
 
 const sizes = [2000, 5000, 20000, 1000000];
 for (const size of sizes) {

@@ -1,4 +1,4 @@
-.venv/
+deno.lock
 node_modules/
 cc.zh.300.vec
 cc.zh.300-small.vec

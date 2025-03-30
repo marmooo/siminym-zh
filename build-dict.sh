@@ -1,6 +1,6 @@
-deno run --allow-read --allow-write reduce.js
-python reduce.py $1
-python -m pymagnitude.converter \
+deno run -RW reduce.js
+rye run python reduce.py $1
+rye run python -m pymagnitude.converter \
   -i cc.zh.300-small.vec \
   -o cc.zh.300-small.magnitude
-python similars.py
+rye run python similars.py
